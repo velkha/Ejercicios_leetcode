@@ -18,5 +18,17 @@ function twoSum(numbers: number[], target: number): number[] {
         }
         auxDic[numbers[i]] = i;
     }
-    throw new Error("No two sum solution");
+}
+
+/* TRYING EVEN MORE WITH NO RESULT */
+function twoSum(numbers: number[], target: number): number[] {
+    const numMap = new Map<number, number>();
+
+    for (let i = 0; i < numbers.length; i++) {
+        const difference = target - numbers[i];
+        if (numMap.has(difference)) {
+            return [numMap.get(difference) + 1, i + 1];
+        }
+        numMap.set(numbers[i], i);
+    }
 }
