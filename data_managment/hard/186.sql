@@ -1,3 +1,4 @@
+-- first way i find it
 SELECT 
     d1.name AS Department, 
     e1.name AS Employee, 
@@ -13,7 +14,8 @@ WHERE
         WHERE e2.salary > e1.salary AND e2.departmentId = e1.departmentId
     ) < 3;
 
--- mor optimized but less readable
+-- mor optimized but less readable tecnically, for leetcode is actually
+-- less optimized but idk why
 /* Write your PL/SQL query statement below */
 WITH RankedSalaries AS (
     SELECT
